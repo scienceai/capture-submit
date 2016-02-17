@@ -1,6 +1,6 @@
 {
   "name": "capture-submit",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "React higher order component that calls a onSubmit callback on blur, pressing enter etc..",
   "main": "dist/index.js",
   "scripts": {
