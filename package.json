@@ -1,6 +1,6 @@
 {
   "name": "capture-submit",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "React higher order component that calls a onSubmit callback on blur, pressing enter etc..",
   "main": "dist/index.js",
   "scripts": {
@@ -23,8 +23,8 @@
   },
   "homepage": "https://github.com/scienceai/capture-submit#readme",
   "peerDependencies": {
-    "react": "^0.14.7",
-    "react-dom": "^0.14.7"
+    "react": "^15.0.1",
+    "react-dom": "^15.0.1"
   },
   "devDependencies": {
     "babel-cli": "^6.5.1",
