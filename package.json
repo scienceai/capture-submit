@@ -1,9 +1,10 @@
 {
   "name": "capture-submit",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "React higher order component that calls a onSubmit callback on blur, pressing enter etc..",
   "main": "dist/index.js",
   "scripts": {
+    "format": "prettier --single-quote --write \"{src,test}/**/*.js\"",
     "prepublish": "./node_modules/.bin/babel src --out-dir dist"
   },
   "repository": {
@@ -18,17 +19,22 @@
   ],
   "author": "Sebastien Ballesteros",
   "license": "Apache-2.0",
+  "babel": {
+    "presets": [
+      "es2015",
+      "react"
+    ]
+  },
   "bugs": {
     "url": "https://github.com/scienceai/capture-submit/issues"
   },
   "homepage": "https://github.com/scienceai/capture-submit#readme",
-  "peerDependencies": {
-    "react": "^15.0.1",
-    "react-dom": "^15.0.1"
-  },
   "devDependencies": {
-    "babel-cli": "^6.5.1",
-    "babel-preset-es2015": "^6.5.0",
-    "babel-preset-react": "^6.5.0"
+    "babel-cli": "^6.24.1",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-react": "^6.24.1",
+    "prettier": "^1.5.3",
+    "react": "^15.6.1",
+    "react-dom": "^15.6.1"
   }
 }

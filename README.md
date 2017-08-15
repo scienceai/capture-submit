@@ -1,5 +1,7 @@
 # capture-submit
 
+[![styled with prettier](https://img.shields.io/badge/styled_with-prettier-ff69b4.svg)](https://github.com/prettier/prettier)
+
 React higher order component that calls a onSubmit callback on blur, pressing enter etc...
 
 ```js

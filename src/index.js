@@ -4,7 +4,6 @@ const ENTER_KEY_CODE = 13;
 
 export default function CaptureSubmit(ComposedComponent) {
   return class extends Component {
-
     constructor(props) {
       super(props);
       this.state = {
@@ -21,35 +20,55 @@ export default function CaptureSubmit(ComposedComponent) {
     }
 
     handleChange(e) {
-      if (this.props.onSubmit && e.target.tagName === 'SELECT' && this.props.value !== e.target.value) {
+      if (
+        this.props.onSubmit &&
+        e.target.tagName === 'SELECT' &&
+        this.props.value !== e.target.value
+      ) {
         this.props.onSubmit(e);
       }
-      this.setState({value: e.target.value});
+      this.setState({ value: e.target.value });
+
+      if (this.props.onChange) {
+        this.props.onChange(e);
+      }
     }
 
     handleBlur(e) {
       if (this.props.onSubmit && this.props.value !== e.target.value) {
         this.props.onSubmit(e);
       }
+
+      if (this.props.onBlur) {
+        this.props.onBlur(e);
+      }
     }
 
     handleKeyDown(e) {
       if (e.keyCode === ENTER_KEY_CODE) {
         // TEXTAREA resize when enter is pressed
-        if (this.props.onSubmit && e.target.tagName === 'INPUT' && this.props.value !== e.target.value) {
+        if (
+          this.props.onSubmit &&
+          e.target.tagName === 'INPUT' &&
+          this.props.value !== e.target.value
+        ) {
           this.props.onSubmit(e);
         }
+      }
+
+      if (this.props.onKeyDown) {
+        this.props.onKeyDown(e);
       }
     }
 
     render() {
       return (
         <ComposedComponent
-            {...this.props}
-            value={this.state.value}
-            onChange={this.handleChange.bind(this)}
-            onBlur={this.handleBlur.bind(this)}
-            onKeyDown={this.handleKeyDown.bind(this)}
+          {...this.props}
+          value={this.state.value}
+          onChange={this.handleChange.bind(this)}
+          onBlur={this.handleBlur.bind(this)}
+          onKeyDown={this.handleKeyDown.bind(this)}
         />
       );
     }
